@@ -23,6 +23,6 @@ namespace ConsoleApp7
         {
             _price = (int)(_price * (100 - percent) / 100);
         }
-
+        public 
     }
 }
