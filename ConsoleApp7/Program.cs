@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            List<Smartphone> smartphones = new List<Smartphone>() 
+            List<Smartphone> smartphones = new List<Smartphone>()
             {
                 new Smartphone("Samsung", "Galaxy S24", 2024){Rating = 9.1},
                 new Smartphone("Apple", "iPhone 15", 2023){Rating = 9.3},
@@ -25,16 +25,36 @@
             smartphones[6].SetPrice(289000);
             smartphones[7].SetPrice(319000);
             Console.WriteLine("Phones that released in 2024:");
-            foreach (string model in smartphones.Where(x=> x.GetReleaseYear() == 2024).Select(x => x.Model).ToList())
+            foreach (string model in smartphones.Where(x => x.GetReleaseYear() == 2024).Select(x => x.Model).ToList())
             {
                 Console.WriteLine($" - {model}");
             }
-            Console.WriteLine($"Best rated phone: {smartphones.OrderByDescending(x => x.Rating).Select(x=> x.Model).First()}");
+            Console.WriteLine($"Best rated phone: {smartphones.OrderByDescending(x => x.Rating).Select(x => x.Model).First()}");
             int CountBrand(string brand)
             {
-                return smartphones.Where(x=> x.Brand == brand).Count();
+                return smartphones.Where(x => x.Brand == brand).Count();
             }
             Console.WriteLine($"Samsung has: {CountBrand("Samsung")} phones.");
+            List<Hotel> hotels = new List<Hotel>()
+            {
+                new Hotel("Grand Palace", "Budapest", 5){ Rating =  9.4 },
+                new Hotel("City Hotel", "Budapest", 3) { Rating = 8.2 },
+                new Hotel("Blue Sea Resort", "Split", 4) { Rating = 9.1},
+                new Hotel("Royal Beach", "Barcelona", 5) { Rating = 9.3},
+                new Hotel("Mountain View", "Salzburg", 4) { Rating = 8.8 },
+                new Hotel("Central Stay", "Prague", 3) { Rating = 8.5 },
+                new Hotel("Luxury Garden", "Vienna", 5){ Rating = 9.2 },
+                new Hotel("Sunset Hotel", "Split", 4){ Rating = 8.9 }
+            };
+            hotels[0].SetPricePerNight(68000);
+            hotels[1].SetPricePerNight(32000);
+            hotels[2].SetPricePerNight(54000);
+            hotels[3].SetPricePerNight(82000);
+            hotels[4].SetPricePerNight(46000);
+            hotels[5].SetPricePerNight(28000);
+            hotels[6].SetPricePerNight(75000);
+            hotels[7].SetPricePerNight(49000);
+
         }
     }
 }
