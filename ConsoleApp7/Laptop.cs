@@ -15,6 +15,10 @@ namespace ConsoleApp7
         {
             return _processor;
         }
+        public int GetPrice()
+        {
+            return _price;
+        }
         public void SetPrice(int newPrice)
         {
             _price = newPrice;
