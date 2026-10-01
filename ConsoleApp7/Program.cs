@@ -54,6 +54,14 @@
             hotels[5].SetPricePerNight(28000);
             hotels[6].SetPricePerNight(75000);
             hotels[7].SetPricePerNight(49000);
+            Console.WriteLine($"Cheapest hotel: {hotels.OrderBy(x => x.PriceCalculation(1)).Select(x => x.Name).First()}");
+            Console.WriteLine("Hotels in Budapest:");
+            hotels.Where(x => x.City == "Budapest").Select(x => x.Name).ToList().ForEach(x => Console.WriteLine($" - {x}"));
+            List<string> lis = hotels.OrderByDescending(x => x.IsAtLeast4Stars()).Select(x => x.Name).ToList();
+            Console.WriteLine("Top 3 best rated hotels:");
+            Console.WriteLine($" - {lis[0]}");
+            Console.WriteLine($" - {lis[1]}");
+            Console.WriteLine($" - {lis[2]}");
 
         }
     }
