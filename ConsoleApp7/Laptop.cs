@@ -19,7 +19,7 @@ namespace ConsoleApp7
         {
             _price = newPrice;
         }
-        public void UpdateMemory(int newMemory)
+        public void AddMemory(int newMemory)
         {
             Memory += newMemory;
         }
