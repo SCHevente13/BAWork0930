@@ -9,7 +9,11 @@ namespace ConsoleApp7
     internal record Course(string Name, string Category, string Teacher)
     {
         private int _price { get; set; }
-        private int _studentCount { get; set; }
+        private int _studentCount { get; set; } = 0;
+        public void SetPrice(int newPrice)
+        {
+            _price = newPrice;
+        }
         public void AddStudents(int newStudents)
         {
             _studentCount += newStudents;

@@ -10,6 +10,14 @@ namespace ConsoleApp7
     {
         private int _price { get; set; }
         private double _rating { get; set; }
+        public void SetPrice(int newPrice)
+        {
+            _price = newPrice;
+        }
+        public void SetRating(double newRating)
+        {
+            _rating = newRating;
+        }
         public void Sale(int percent)
         {
             _price = (int)(_price * (100 - percent) / 100);

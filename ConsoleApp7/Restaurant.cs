@@ -12,6 +12,14 @@ namespace ConsoleApp7
     {
         private int _averagePrice { get; set; }
         private double _rating { get; set; }
+        public void SetPrice(int newPrice)
+        {
+            _averagePrice = newPrice;
+        }
+        public void SetRating(double newRating)
+        {
+            _rating = newRating;
+        }
         public void UpdateRating(double newRating)
         {
             if (newRating > 0 && newRating < 10)
